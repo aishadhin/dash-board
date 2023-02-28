@@ -14,6 +14,9 @@ import Header from "./Shared/Header";
 import Footer from "./Shared/Footer";
 import AllServices from "./pages/AllServices";
 import PriceList from "./pages/PriceList";
+import Login from "./pages/Login";
+import SignUp from "./pages/SignUp";
+
 function App() {
   return (
     <Router>
@@ -29,6 +32,8 @@ function App() {
           <Route path="/saved" element={<Saved />} />
           <Route path="/settings" element={<Setting />} />
           <Route path="/services-offered/price-list" element={<PriceList />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/create-account" element={<SignUp />} />
           <Route
             path="/services-offered/view-all-services"
             element={<AllServices />}
