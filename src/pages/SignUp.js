@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import auth from '../components/Authentication/firebase.init';
 import Loading from '../components/Alerts/Loading';
@@ -162,6 +162,8 @@ const SignUp = () => {
 
                                         <input type="submit" value='Create A New Account' className="btn btn-primary text-white capitalize w-full mt-3" />
                                     </form>
+
+                                    <p className='text-center mt-5'>Already have an account? <Link className='underline underline-offset-2 text-primary' to="/login">Login</Link></p>
 
                                 </div>
                             </main>
