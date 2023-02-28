@@ -16,6 +16,7 @@ import AllServices from "./pages/AllServices";
 import PriceList from "./pages/PriceList";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
+import AuthVerification from "./components/Authentication/AuthVerification";
 
 function App() {
   return (
@@ -23,20 +24,20 @@ function App() {
       <Header></Header>
       <SideBar>
         <Routes>
-          <Route path="/" element={<Dashboard />} />
-          <Route path="/assistants" element={<Users />} />
-          <Route path="/messages" element={<Messages />} />
-          <Route path="/analytics" element={<Analytics />} />
-          <Route path="/file-manager" element={<FileManager />} />
-          <Route path="/order" element={<Order />} />
-          <Route path="/saved" element={<Saved />} />
-          <Route path="/settings" element={<Setting />} />
-          <Route path="/services-offered/price-list" element={<PriceList />} />
+          <Route path="/" element={<AuthVerification><Dashboard /></AuthVerification>} />
+          <Route path="/assistants" element={<AuthVerification><Users /></AuthVerification>} />
+          <Route path="/messages" element={<AuthVerification><Messages /></AuthVerification>} />
+          <Route path="/analytics" element={<AuthVerification><Analytics /></AuthVerification>} />
+          <Route path="/file-manager" element={<AuthVerification><FileManager /></AuthVerification>} />
+          <Route path="/order" element={<AuthVerification><Order /></AuthVerification>} />
+          <Route path="/saved" element={<AuthVerification><Saved /></AuthVerification>} />
+          <Route path="/settings" element={<AuthVerification><Setting /></AuthVerification>} />
+          <Route path="/services-offered/price-list" element={<AuthVerification><PriceList /></AuthVerification>} />
           <Route path="/login" element={<Login />} />
           <Route path="/create-account" element={<SignUp />} />
           <Route
             path="/services-offered/view-all-services"
-            element={<AllServices />}
+            element={<AuthVerification><AllServices /></AuthVerification>}
           />
           <Route path="*" element={<> not found</>} />
         </Routes>
